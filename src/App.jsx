@@ -1,18 +1,18 @@
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Services } from "./components/Services";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { DemoPage } from "./pages/Demo";
+import { HomePage } from "./pages/Home";
 
 
 function App() {
   return (
-    <div>
-      <Header />
-      <main>
-        <Services />
-        <Services />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index path='/' element={<HomePage />} />
+        <Route path='/demo' element={<DemoPage />} />
+        {/* <Route path='/register' element={<RegisterPage />} /> */}
+        {/* <Route path='*' element={<NoPage />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
